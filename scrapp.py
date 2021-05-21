@@ -8,22 +8,20 @@ import pandas as pd
 import datetime
 espacio = '   '
 
-
 titles=[]
 prices=[]
 link=[]
-
 
 # Opciones de navegación
 options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\Scrapping1\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
-searchterm = input("Enter the item you want: ")
+searchterm = input("¿Que quieres buscar?: ")
 searchterm = searchterm.replace(" ", "+")
-url = f'https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw={searchterm}&_sacat=0'
+url = f"https://www.google.es/search?q={searchterm}&sxsrf=ALeKk01yago1e8FHuK6OkdB78U4ZSiyPew%3A1621614800296&ei=0OCnYJvDEcW4lwT76KzYCQ&oq=venom+2&gs_lcp=Cgdnd3Mtd2l6EAMyCAguELEDEJMCMgQILhBDMgUIABCxAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BwgAEEcQsAM6BwgAELADEEM6DQguELADEMgDEEMQkwI6CgguELADEMgDEEM6DQguELEDEIMBEEMQkwI6BwguELEDEEM6BAgAEEM6CggAELEDEIMBEENKBQg4EgExUIkfWKggYOsiaAFwAngAgAGtAYgBuQOSAQMwLjOYAQCgAQGqAQdnd3Mtd2l6yAEPwAEB&sclient=gws-wiz&ved=0ahUKEwib64jxmdvwAhVF3IUKHXs0C5sQ4dUDCA4&uact=5"
 
 driver = webdriver.Chrome(driver_path, chrome_options=options)
 
@@ -36,11 +34,12 @@ descripciones = []
 i = [1,50]
 print(i)
 results = soup.find_all("div", {"class": "s-item__info clearfix"})
+j = [1,2,3,4,5,6]
 
 try:
     WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                         '//*[@id="gdpr-banner-accept"]'))) \
+                                         '/html/body/div[3]/div[3]/span/div/div/div[3]/button[2]/div'))) \
     .click()
 
 except:
@@ -48,121 +47,29 @@ except:
 
 #Analiza la primera pagina
 estado = 2
-for items in results:
-    title = items.find('h3', {'class': "s-item__title"}).text
-    price = items.find("span", {"class": "s-item__price"})
-    url = items.find('a',href=True)['href']
-
-    estado = 1
-    if price is None:
-        continue
-    titles.append(title)
-    prices.append(price.text)
-    link.append(url)
-
 for j in i :
     WebDriverWait(driver, 1) \
         .until(EC.element_to_be_clickable((By.XPATH,
-                                    '//*[@id="srp-river-results"]/ul/li['+str(j)+']/div/div[2]/a/h3'))) \
+                                    '/html/body/div[7]/div/div[9]/div[1]/div/div[2]/div[2]/div/div/div['+str(j)+']/div/div/div[1]/a/h3'))) \
         .click()
+
+    '''
     titulo = driver.find_element_by_xpath ("/html/body/div[3]/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/h1")
     precio = driver.find_element_by_xpath ("/html/body/div[3]/div[3]/div/div/div[2]/div[3]/div[2]/form/div[2]/table/tbody/tr/td[2]/div[2]/div[2]/span[1]")
     descripcion = driver.find_element_by_xpath ("/html/body/div[3]/div[5]/div[1]/div[6]/div[2]/div")
     descripciones.append({"Titulo": titulo.text, "Precio": precio.text,'URL: ':link, "descripcion": descripcion.text})
+    '''
     driver.back()
 
     if j == 50 :
         print(j)
         continue
-
-
-productslist.append({ "espacio": espacio })
-
-descripciones.append({"espacio": espacio })
-
-# Pasa a la siguiente pagina (2)
-if estado == 1:
-    print('if')
-    WebDriverWait(driver, 1) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                             '//*[@id="srp-river-results"]/ul/div/div[2]/span/span/nav/a[2]'))) \
-        .click()
-
-
-#Analiza la segunda pagina
-for items in results:
-    title = items.find('h3', {'class': "s-item__title"}).text
-    price = items.find("span", {"class": "s-item__price"})
-    url = items.find('a',href=True)['href']
-
-    estado = 1
-    if price is None:
-        continue
-    titles.append(title)
-    prices.append(price.text)
-    link.append(url)
-
-for j in i :
-    WebDriverWait(driver, 1) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                    '//*[@id="srp-river-results"]/ul/li['+str(j)+']/div/div[2]/a/h3'))) \
-        .click()
-    descripcion = driver.find_element_by_xpath ("/html/body/div[3]/div[5]/div[1]/div[6]/div[2]/div")
-    descripciones.append({"descripcion": descripcion.text})
-    driver.back()
-
-    if j == 50 :
-        print(j)
-        continue
-
-
-productslist.append({ "espacio": espacio })
-descripciones.append({"espacio": espacio })
-
-# Pasa a la siguiente pagina (3)
-if estado == 1:
-    print('if')
-    WebDriverWait(driver, 5) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                             '//*[@id="srp-river-results"]/ul/div/div[2]/span/span/nav/a[2]'))) \
-        .click()
-
-# Analiza la tercera pagina
-for items in results:
-    title = items.find('h3', {'class': "s-item__title"}).text
-    price = items.find("span", {"class": "s-item__price"})
-    url = items.find('a',href=True)['href']
-
-    estado = 1
-    if price is None:
-        continue
-    titles.append(title)
-    prices.append(price.text)
-    link.append(url)
-
-for j in i :
-    WebDriverWait(driver, 1) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                    '//*[@id="srp-river-results"]/ul/li['+str(j)+']/div/div[2]/a/h3'))) \
-        .click()
-    descripcion = driver.find_element_by_xpath ("/html/body/div[3]/div[5]/div[1]/div[6]/div[2]/div")
-    descripciones.append({"descripcion": descripcion.text})
-    driver.back()
-
-    if j == 50 :
-        print(j)
-        continue
-
-
-productslist.append({ "espacio": espacio })
-descripciones.append({"espacio": espacio })
 
 
 df = pd.DataFrame({'Product Name:':titles,'Price: ':prices,'URL: ':link})
 ef = pd.DataFrame(descripciones)
 print(df)
 print(ef)
-if
 df.to_csv(searchterm + ' Titulos_y_Precios.csv', index=False, encoding='utf-8')
 ef.to_csv(searchterm + ' Descripciones.csv', index=False, encoding='utf-8')
 print('Saved to CSV')
