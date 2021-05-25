@@ -17,7 +17,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 searchterm = input("¿Que quieres buscar?: ")
 searchterm = searchterm.replace(" ", "+")
@@ -47,31 +47,8 @@ except:
 
 #Analiza la primera pagina
 estado = 2
-for j in i :
-    WebDriverWait(driver, 1) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                    '/html/body/div[7]/div/div[9]/div[1]/div/div[2]/div[2]/div/div/div['+str(j)+']/div/div/div[1]/a/h3'))) \
-        .click()
 
-    '''
-    titulo = driver.find_element_by_xpath ("/html/body/div[3]/div[3]/div/div/div[2]/div[3]/div[1]/div[1]/h1")
-    precio = driver.find_element_by_xpath ("/html/body/div[3]/div[3]/div/div/div[2]/div[3]/div[2]/form/div[2]/table/tbody/tr/td[2]/div[2]/div[2]/span[1]")
-    descripcion = driver.find_element_by_xpath ("/html/body/div[3]/div[5]/div[1]/div[6]/div[2]/div")
-    descripciones.append({"Titulo": titulo.text, "Precio": precio.text,'URL: ':link, "descripcion": descripcion.text})
-    '''
-    driver.back()
-
-    if j == 50 :
-        print(j)
-        continue
-
-
-df = pd.DataFrame({'Product Name:':titles,'Price: ':prices,'URL: ':link})
-ef = pd.DataFrame(descripciones)
-print(df)
-print(ef)
-df.to_csv(searchterm + ' Titulos_y_Precios.csv', index=False, encoding='utf-8')
-ef.to_csv(searchterm + ' Descripciones.csv', index=False, encoding='utf-8')
-print('Saved to CSV')
-
-driver.quit()
+WebDriverWait(driver, 1) \
+    .until(EC.element_to_be_clickable((By.CLASS_NAME,
+                                'yuRUbf'))) \
+    .click()
