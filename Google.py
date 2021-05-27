@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+
 import pandas as pd
 import datetime
 espacio = '   '
@@ -46,9 +48,25 @@ WebDriverWait(driver, 5) \
                                      '//*[@id="site-app"]/div[2]/div[2]/div[2]/form/ul/li[4]/button'))) \
 .click()
 
+#Aceptamos cookies y quitamos publicidad
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '//*[@id="cookiescript_buttons"]'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '//*[@id="browse"]/div[5]/div/button'))) \
+    .click()
+
 #Hacemos click y seleccionamos Davinci templates
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
+    .click()
 
-
-
-
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
+    .click()
 
