@@ -38,23 +38,5 @@ results = soup.find_all("div", {"class": "s-item__info clearfix"})
 try:
     WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                         '/html/body/div[3]/div[3]/span/div/div/div[3]/button[2]/div'))) \
+                                         ''))) \
     .click()
-
-except:
-    estado == 2
-
-#Analiza la primera pagina
-estado = 2
-
-for j in i:
-    try:
-        WebDriverWait(driver, 5) \
-            .until(EC.element_to_be_clickable((By.XPATH,
-                                        '//*[@id="rso"]/div['+str(j)+']/div/div/div[1]'))) \
-            .click()
-        driver.back()
-    except:
-        driver.forward()
-    
-
