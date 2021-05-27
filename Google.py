@@ -17,7 +17,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\teode\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 searchterm = input("¿Que quieres buscar?: ")
 searchterm = searchterm.replace(" ", "+")
@@ -48,10 +48,13 @@ except:
 estado = 2
 
 for j in i:
-    WebDriverWait(driver, 5) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                    '//*[@id="rso"]/div['+str(j)+']/div/div/div[1]'))) \
-        .click()
-    driver.back()
+    try:
+        WebDriverWait(driver, 5) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                        '//*[@id="rso"]/div['+str(j)+']/div/div/div[1]'))) \
+            .click()
+        driver.back()
+    except:
+        driver.forward()
     
 
