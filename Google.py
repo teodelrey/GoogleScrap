@@ -1,14 +1,13 @@
 import time
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import pandas as pd
-import datetime
+import random
 
 
 
@@ -27,7 +26,8 @@ driver.get( url )
 r = requests.get(url)
 soup = BeautifulSoup(r.text, "html.parser")
 '''results = soup.find_all("div", {"class": "s-item__info clearfix"})'''
-i = range(1,6)
+u = range(1, 30)
+moves = [Keys.DOWN,Keys.UP]
 
 #Aceptamos las cookies
 WebDriverWait(driver, 5) \
@@ -48,97 +48,58 @@ WebDriverWait(driver, 5) \
 .click()
 
 #Aceptamos cookies y quitamos publicidad
-WebDriverWait(driver, 1) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '//*[@id="cookiescript_buttons"]'))) \
     .click()
 
-WebDriverWait(driver, 1) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '//*[@id="browse"]/div[5]/div/button'))) \
     .click()
 
 #Hacemos click y seleccionamos Davinci templates
-WebDriverWait(driver, 5) \
+WebDriverWait(driver, 1) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 5) \
+WebDriverWait(driver, 1) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
 
-#Bucle
-for j in i:
-    WebDriverWait(driver, 500) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                           '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2'))) \
-        .click()
-    WebDriverWait(driver, 500) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                           '//*[@id="download-btn-container"]/a'))) \
-        .click()
-    time.sleep(3)
-    driver.back()
+def scrapea9objetos(a, b):
 
-#Segunda vez
+    i = range(a, b)
+    for j in i:
+        WebDriverWait(driver, 2) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                               '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2'))) \
+            .click()
+        print(j)
+        driver.back()
 
-driver.get( url )
-r = requests.get(url)
-soup = BeautifulSoup(r.text, "html.parser")
-'''results = soup.find_all("div", {"class": "s-item__info clearfix"})'''
-i = range(7,14)
+def scrollhaciaabajo():
 
-#Aceptamos las cookies
-WebDriverWait(driver, 5) \
-.until(EC.element_to_be_clickable((By.XPATH,
-                                     '//*[@id="adroll_reject"]'))) \
-.click()
+    for y in u:
+        driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
-#Nos logueamos y entramos en la web
-correo = driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[2]/div[2]/form/ul/li[1]/input")
-correo.send_keys("nitro85@gmail.com")
+scrapea9objetos(1, 9)
+scrollhaciaabajo()
+scrapea9objetos(9, 19)
+scrollhaciaabajo()
+scrapea9objetos(19, 28)
+scrollhaciaabajo()
+scrapea9objetos(28, 37)
+scrollhaciaabajo()
+scrapea9objetos(37, 46)
+scrollhaciaabajo()
+scrapea9objetos(46, 55)
+scrollhaciaabajo()
+scrapea9objetos(55, 61)
 
-contraseña = driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[2]/div[2]/form/ul/li[2]/input")
-contraseña.send_keys("XXLxxl123!")
 
-WebDriverWait(driver, 5) \
-.until(EC.element_to_be_clickable((By.XPATH,
-                                     '//*[@id="site-app"]/div[2]/div[2]/div[2]/form/ul/li[4]/button'))) \
-.click()
 
-#Aceptamos cookies y quitamos publicidad
-WebDriverWait(driver, 1) \
-    .until(EC.element_to_be_clickable((By.XPATH,
-                                       '//*[@id="cookiescript_buttons"]'))) \
-    .click()
 
-WebDriverWait(driver, 1) \
-    .until(EC.element_to_be_clickable((By.XPATH,
-                                       '//*[@id="browse"]/div[5]/div/button'))) \
-    .click()
 
-#Hacemos click y seleccionamos Davinci templates
-WebDriverWait(driver, 5) \
-    .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
-    .click()
-
-WebDriverWait(driver, 5) \
-    .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
-    .click()
-
-#Bucle
-for j in i:
-    WebDriverWait(driver, 500) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                           '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2'))) \
-        .click()
-    WebDriverWait(driver, 500) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                           '//*[@id="download-btn-container"]/a'))) \
-        .click()
-    time.sleep(3)
-    driver.back()
