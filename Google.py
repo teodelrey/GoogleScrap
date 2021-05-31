@@ -73,6 +73,8 @@ def scrapea9objetos(a, b):
 
     i = range(a, b)
     for j in i:
+        print('He entrado en:')
+        print(j)
         WebDriverWait(driver, 2) \
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2'))) \
@@ -85,19 +87,44 @@ def scrollhaciaabajo():
     for y in u:
         driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
-scrapea9objetos(1, 9)
-scrollhaciaabajo()
-scrapea9objetos(9, 19)
-scrollhaciaabajo()
-scrapea9objetos(19, 28)
-scrollhaciaabajo()
-scrapea9objetos(28, 37)
-scrollhaciaabajo()
-scrapea9objetos(37, 46)
-scrollhaciaabajo()
-scrapea9objetos(46, 55)
-scrollhaciaabajo()
-scrapea9objetos(55, 61)
+while True:
+    try:
+        try:
+            scrapea9objetos(1, 9)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(9, 19)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(19, 28)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(28, 37)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(37, 46)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(46, 55)
+            scrollhaciaabajo()
+        except:
+            break
+        try:
+            scrapea9objetos(55, 61)
+        except:
+            break
+    except:
+        print('Se ha roto')
 
 
 
