@@ -64,11 +64,14 @@ WebDriverWait(driver, 1) \
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+#Seleccionamos Titles
+
+
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
-
+time.sleep(10)
 def scrapea9objetos(a, b):
 
     i = range(a, b)
@@ -142,6 +145,7 @@ def pasarpagina():
 
 #scrap de titles
 
+''''
 #Pagina1
 funcionalidad()
 pasarpagina()
@@ -164,20 +168,22 @@ pasarpagina()
 #Pagina7
 funcionalidad()
 pasarpagina()
+'''
 
 #Deselecciona Title y selecciona logos
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
     .click()
 
+time.sleep(10)
 #Recorremos todas las paginas otra vez descargando de LOGOS
-
+'''
 #Pagina1
 print('Ha pasado a Logos')
 funcionalidad()
@@ -197,20 +203,22 @@ pasarpagina()
 #Pagina6
 funcionalidad()
 pasarpagina()
+'''
 
 #Deselecciona Logos y selecciona Photo/Video
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label'))) \
     .click()
-
+time.sleep(10)
 #Scrap de Photos/Videos
 
+'''
 #Recorremos las paginas
 #Pagina1
 print('Ha pasado a Photos/Videos')
@@ -225,20 +233,23 @@ pasarpagina()
 #Pagina4
 funcionalidad()
 pasarpagina()
+'''
 
 #Deselecciona Photo/Video y selecciona Transitions
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label'))) \
     .click()
+time.sleep(10)
 
 #Scrap de Transitions
 
+'''
 #Recorremos las paginas
 #Pagina1
 print('Ha pasado a Transitions')
@@ -247,21 +258,24 @@ pasarpagina()
 #Pagina2
 funcionalidad()
 pasarpagina()
+'''
 
 #Deselecciona Transitions y selecciona Slideshows
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label'))) \
     .click()
+time.sleep(10)
 
 #Scrap Slideshow
 #Recorremos las paginas
 
+'''
 #Pagina1
 print('Ha pasado Slideshows')
 funcionalidad()
@@ -272,14 +286,139 @@ pasarpagina()
 #Pagina3
 funcionalidad()
 pasarpagina()
+'''
 
 #Deselecciona Slideshows y selecciona Intros
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 3) \
+WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
-                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label/input'))) \
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[6]/div/label'))) \
     .click()
+time.sleep(10)
+
+#Scrap Intros
+#Recorremos las paginas
+'''
+#Pagina1
+print('Ha pasado a Intros')
+funcionalidad()
+pasarpagina()
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+'''
+#Deselecciona Intros y selecciona Luts
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[6]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[7]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Luts
+#Recorremos las paginas
+'''
+#Pagina1
+print('Ha pasado a Luts')
+funcionalidad()
+pasarpagina()
+'''
+
+#Deselecciona Luts y selecciona Effects
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[7]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Effects
+#Recorremos las paginas
+'''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+'''
+
+#Deseleccionamos Effects
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
+    .click()
+time.sleep(10)
