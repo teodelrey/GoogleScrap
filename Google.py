@@ -16,7 +16,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
@@ -79,7 +79,7 @@ def scrapea9objetos(a, b):
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
             .click()
-        time.sleep(5)
+        time.sleep(4)
         print(j)
         driver.back()
 
@@ -88,8 +88,9 @@ def scrollhaciaabajo():
     for y in u:
         driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
-while True:
-    try:
+def funcionalidad():
+
+    while True:
         try:
             scrapea9objetos(1, 10)
             scrollhaciaabajo()
@@ -131,5 +132,154 @@ while True:
         except:
             print("ROTOOO")
             break
-    except:
-        print('Se ha roto')
+
+
+def pasarpagina():
+    WebDriverWait(driver, 4) \
+        .until(EC.element_to_be_clickable((By.XPATH,
+                                           '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
+        .click()
+
+#scrap de titles
+
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a la pagina 2')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+
+#Deselecciona Title y selecciona logos
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
+    .click()
+
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
+    .click()
+
+#Recorremos todas las paginas otra vez descargando de LOGOS
+
+#Pagina1
+print('Ha pasado a Logos')
+funcionalidad()
+pasarpagina()
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+
+#Deselecciona Logos y selecciona Photo/Video
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label/input'))) \
+    .click()
+
+#Scrap de Photos/Videos
+
+#Recorremos las paginas
+#Pagina1
+print('Ha pasado a Photos/Videos')
+funcionalidad()
+pasarpagina()
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+
+#Deselecciona Photo/Video y selecciona Transitions
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label/input'))) \
+    .click()
+
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+    .click()
+
+#Scrap de Transitions
+
+#Recorremos las paginas
+#Pagina1
+print('Ha pasado a Transitions')
+funcionalidad()
+pasarpagina()
+#Pagina2
+funcionalidad()
+pasarpagina()
+
+#Deselecciona Transitions y selecciona Slideshows
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+    .click()
+
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label/input'))) \
+    .click()
+
+#Scrap Slideshow
+#Recorremos las paginas
+
+#Pagina1
+print('Ha pasado Slideshows')
+funcionalidad()
+pasarpagina()
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+
+#Deselecciona Slideshows y selecciona Intros
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label/input'))) \
+    .click()
+
+WebDriverWait(driver, 3) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label/input'))) \
+    .click()
