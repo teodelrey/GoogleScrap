@@ -1,4 +1,3 @@
-import time
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -6,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import time
 import pandas as pd
 import random
 
@@ -16,7 +16,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
@@ -64,7 +64,7 @@ WebDriverWait(driver, 1) \
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
     .click()
 
-WebDriverWait(driver, 1) \
+WebDriverWait(driver, 3) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
@@ -75,10 +75,11 @@ def scrapea9objetos(a, b):
     for j in i:
         print('He entrado en:')
         print(j)
-        WebDriverWait(driver, 2) \
+        WebDriverWait(driver, 4) \
             .until(EC.element_to_be_clickable((By.XPATH,
-                                               '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2'))) \
+                                               '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
             .click()
+        time.sleep(5)
         print(j)
         driver.back()
 
@@ -90,43 +91,45 @@ def scrollhaciaabajo():
 while True:
     try:
         try:
-            scrapea9objetos(1, 9)
+            scrapea9objetos(1, 10)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
-            scrapea9objetos(9, 19)
+            scrapea9objetos(10, 19)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
             scrapea9objetos(19, 28)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
             scrapea9objetos(28, 37)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
             scrapea9objetos(37, 46)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
             scrapea9objetos(46, 55)
             scrollhaciaabajo()
         except:
+            print("ROTOOO")
             break
         try:
             scrapea9objetos(55, 61)
         except:
+            print("ROTOOO")
             break
     except:
         print('Se ha roto')
-
-
-
-
-
