@@ -422,3 +422,409 @@ WebDriverWait(driver, 5) \
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
     .click()
 time.sleep(10)
+
+#Deseleccionamos Davinci Templates
+WebDriverWait(driver, 1) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
+    .click()
+
+#Seleccionamos Davinci Macros
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
+    .click()
+time.sleep(10)
+
+#Seleccionamos Titles
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[1]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Title (Macros)
+#Recorremos las paginas
+'''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+#Pagina20
+funcionalidad()
+pasarpagina()
+#Pagina21
+funcionalidad()
+pasarpagina()
+'''
+
+#Deselecciona Title y selecciona Transitions
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[1]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[2]/div/label/span[2]'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Logo (Macros)
+#Recorremos las paginas
+''''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+#Pagina20
+funcionalidad()
+pasarpagina()
+'''
+
+#Deselecciona Transitions y selecciona Logo
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[2]/div/label/span[2]'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[3]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Transitions (Macros)
+#Recorremos las paginas
+''''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+'''
+
+#Deselecciona Logo y selecciona Backgrounds
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[3]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[4]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Backgrounds (Macros)
+#Recorremos las paginas
+''''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+'''
+
+#Deselecciona Backgrounds y selecciona Overlays
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[4]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Scrap Overlays (Macros)
+#Recorremos las paginas
+''''
+#Pagina1
+funcionalidad()
+pasarpagina()
+print('Ha pasado a Effects')
+#Pagina2
+funcionalidad()
+pasarpagina()
+#Pagina3
+funcionalidad()
+pasarpagina()
+#Pagina4
+funcionalidad()
+pasarpagina()
+#Pagina5
+funcionalidad()
+pasarpagina()
+#Pagina6
+funcionalidad()
+pasarpagina()
+#Pagina7
+funcionalidad()
+pasarpagina()
+#Pagina8
+funcionalidad()
+pasarpagina()
+#Pagina9
+funcionalidad()
+pasarpagina()
+#Pagina10
+funcionalidad()
+pasarpagina()
+#Pagina11
+funcionalidad()
+pasarpagina()
+#Pagina12
+funcionalidad()
+pasarpagina()
+#Pagina13
+funcionalidad()
+pasarpagina()
+#Pagina14
+funcionalidad()
+pasarpagina()
+#Pagina15
+funcionalidad()
+pasarpagina()
+#Pagina16
+funcionalidad()
+pasarpagina()
+#Pagina17
+funcionalidad()
+pasarpagina()
+#Pagina18
+funcionalidad()
+pasarpagina()
+#Pagina19
+funcionalidad()
+pasarpagina()
+'''
+
+#Deseleccionar Overlays
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
+    .click()
+time.sleep(10)
+
+#Deseleccionamos Macros
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
+    .click()
+time.sleep(10)
