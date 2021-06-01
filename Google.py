@@ -71,7 +71,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 def scrapea9objetos(a, b):
 
     i = range(a, b)
@@ -181,7 +181,7 @@ WebDriverWait(driver, 5) \
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
     .click()
 
-time.sleep(10)
+time.sleep(5)
 #Recorremos todas las paginas otra vez descargando de LOGOS
 '''
 #Pagina1
@@ -215,7 +215,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 #Scrap de Photos/Videos
 
 '''
@@ -245,7 +245,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap de Transitions
 
@@ -270,7 +270,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Slideshow
 #Recorremos las paginas
@@ -298,7 +298,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[6]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Intros
 #Recorremos las paginas
@@ -330,7 +330,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[7]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Luts
 #Recorremos las paginas
@@ -351,7 +351,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Effects
 #Recorremos las paginas
@@ -421,7 +421,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Deseleccionamos Davinci Templates
 WebDriverWait(driver, 1) \
@@ -434,14 +434,14 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Seleccionamos Titles
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[1]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Title (Macros)
 #Recorremos las paginas
@@ -522,7 +522,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[2]/div/label/span[2]'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Logo (Macros)
 #Recorremos las paginas
@@ -600,7 +600,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[3]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Transitions (Macros)
 #Recorremos las paginas
@@ -675,7 +675,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[4]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Backgrounds (Macros)
 #Recorremos las paginas
@@ -750,7 +750,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Scrap Overlays (Macros)
 #Recorremos las paginas
@@ -820,11 +820,11 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
 
 #Deseleccionamos Macros
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
     .click()
-time.sleep(10)
+time.sleep(5)
