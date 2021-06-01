@@ -137,7 +137,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '//*[@id="browse"]/div[5]/div/button'))) \
     .click()
-'''
+
 #Hacemos click y seleccionamos Davinci templates
 WebDriverWait(driver, 1) \
     .until(EC.element_to_be_clickable((By.XPATH,
@@ -152,7 +152,7 @@ WebDriverWait(driver, 5) \
     .click()
 time.sleep(3)
 print('Ha pasado a Titles')
-'''
+
 '''
 #Pagina1
 funcionalidad()
@@ -176,7 +176,7 @@ pasarpagina()
 funcionalidad()
 pasarpagina()
 '''
-'''
+
 #Deselecciona Title y selecciona logos
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
