@@ -16,7 +16,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'D:\\Fork\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
@@ -137,7 +137,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '//*[@id="browse"]/div[5]/div/button'))) \
     .click()
-
+'''
 #Hacemos click y seleccionamos Davinci templates
 WebDriverWait(driver, 1) \
     .until(EC.element_to_be_clickable((By.XPATH,
@@ -150,8 +150,9 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Titles')
+'''
 '''
 #Pagina1
 funcionalidad()
@@ -175,7 +176,7 @@ pasarpagina()
 funcionalidad()
 pasarpagina()
 '''
-
+'''
 #Deselecciona Title y selecciona logos
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
@@ -187,7 +188,7 @@ WebDriverWait(driver, 5) \
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
     .click()
 
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Logos')
 
 #Deselecciona Logos y selecciona Photo/Video
@@ -200,7 +201,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Photos/Videos')
 
 #Deselecciona Photo/Video y selecciona Transitions
@@ -213,7 +214,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[4]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Transitions')
 
 #Deselecciona Transitions y selecciona Slideshows
@@ -226,7 +227,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado Slideshows')
 
 #Deselecciona Slideshows y selecciona Intros
@@ -239,7 +240,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[6]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Intros')
 #Scrap Intros
 #Recorremos las paginas
@@ -254,7 +255,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[7]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Luts')
 
 
@@ -268,7 +269,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Effects')
 
 
@@ -277,7 +278,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[8]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 #Deseleccionamos Davinci Templates
 WebDriverWait(driver, 1) \
@@ -290,14 +291,14 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 #Seleccionamos Titles
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[1]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Titles')
 
 #Deselecciona Title y selecciona Transitions
@@ -310,7 +311,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[2]/div/label/span[2]'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Transitions')
 
 #Deselecciona Transitions y selecciona Logo
@@ -323,7 +324,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[3]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Logo')
 
 
@@ -337,7 +338,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[4]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Backgrounds')
 
 
@@ -351,7 +352,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 print('Ha pasado a Overlays')
 
 
@@ -360,28 +361,30 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 #Deseleccionamos Macros
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[9]/li/div[1]/div/label/span[2]'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
+
+                                                                                          #Apartado photos
 #Seleccionamos STOCK PHOTOS
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/div[1]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 #Seleccionamos ABSTRACT & TEXTURES
 WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[1]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a ABSTRACT & TEXTURES')
 
@@ -395,7 +398,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[2]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a AGRICULTURE')
 
@@ -409,7 +412,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[3]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a ANIMALS & WILDLIFE')
 
@@ -423,7 +426,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[4]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a ARCHITECTURE')
 
@@ -437,7 +440,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[5]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a BACKGROUNDS')
 
@@ -451,7 +454,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[6]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a BUSINESS & FINANCE')
 
@@ -465,7 +468,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[7]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a CITY & URBAN')
 
@@ -479,7 +482,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[8]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a CREATIVITY & DESIGN')
 
@@ -493,7 +496,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[9]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a CULTURE')
 
@@ -507,7 +510,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[10]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a EDUCATION')
 
@@ -521,7 +524,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[11]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a FAMILY')
 
@@ -535,7 +538,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[12]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a FASHION')
 
@@ -549,7 +552,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[13]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a FOOD & DRINK')
 
@@ -563,7 +566,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[14]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a HEALTH & FITNESS')
 
@@ -577,7 +580,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[15]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a HEALTHCARE')
 
@@ -591,7 +594,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[16]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a HOLIDAYS & SEASONAL')
 
@@ -605,7 +608,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[17]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a HOME')
 
@@ -619,7 +622,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[18]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a INDUSTRIAL')
 
@@ -633,7 +636,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[19]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a LIFESTYLE')
 
@@ -647,7 +650,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[20]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a MUSIC')
 
@@ -661,7 +664,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[21]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a NATURE & OUTDOORS')
 
@@ -675,7 +678,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[22]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a PEOPLE')
 
@@ -689,7 +692,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[23]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a SCIENCE & TECHNOLOGY')
 
@@ -703,7 +706,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[24]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a SPORTS & RECREATION')
 
@@ -717,7 +720,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[25]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a TRANSPORTATION')
 
@@ -731,7 +734,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[26]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a TRAVEL')
 
@@ -745,7 +748,7 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[27]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a VINTAGE')
 
@@ -759,6 +762,500 @@ WebDriverWait(driver, 5) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[28]/div/label'))) \
     .click()
-time.sleep(5)
+time.sleep(3)
 
 print('Ha pasado a WEDDING')
+
+
+#Deselecciona WEDDING
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[28]/div/label'))) \
+    .click()
+print('Desseleccionamos wedding')
+
+#Deselecciona photos
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/div[1]/div/label'))) \
+    .click()
+print('Deseleccionamos photos')
+'''
+                                                                                  #Apartado videos
+#Seleccionamos Video
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/div[1]/div/label'))) \
+    .click()
+time.sleep(3)
+print('Seleccionamos Video')
+
+#Seleccionamos GREEN SCREEN
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[1]/div/label'))) \
+    .click()
+time.sleep(3)
+print('Seleccionamos GREEN SCREEN')
+
+#Deselecciona GREEN SCREEN y selecciona TRANSPORTATION
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[1]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[2]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a TRANSPORTATION')
+
+#Deselecciona TRANSPORTATION y selecciona BUILDINGS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[2]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[3]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a BUILDINGS')
+
+#Deselecciona BUILDINGS y selecciona TECHNOLOGY
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[3]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[4]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a TECHNOLOGY')
+
+#Deselecciona TECHNOLOGY y selecciona PEOPLE
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[4]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[5]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a PEOPLE')
+
+#Deselecciona PEOPLE y selecciona HEALTH
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[5]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[6]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a HEALTH')
+
+#Deselecciona HEALTH y selecciona FASHION
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[6]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[7]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a FASHION')
+
+#Deselecciona FASHION y selecciona ANIMALS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[7]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[8]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a ANIMALS')
+
+#Deselecciona ANIMALS y selecciona FOOD
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[8]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[9]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a FOOD')
+
+#Deselecciona FOOD y selecciona SPORTS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[9]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[10]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a SPORTS')
+
+#Deselecciona SPORTS y selecciona NATURE
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[10]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[11]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a NATURE')
+
+#Deselecciona NATURE y selecciona AERIAL
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[11]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[12]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a AERIAL')
+
+#Deselecciona AERIAL y selecciona HOLIDAYS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[12]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[13]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a HOLIDAYS')
+
+#Deselecciona HOLIDAYS y selecciona INDUSTRIAL
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[13]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[14]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a INDUSTRIAL')
+
+#Deselecciona INDUSTRIAL y selecciona HOUSEHOLD
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[14]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[15]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a HOUSEHOLD')
+
+#Deselecciona HOUSEHOLD y selecciona SCIENCE
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[15]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[16]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a SCIENCE')
+
+#Deselecciona SCIENCE y selecciona EDUCATION
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[16]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[17]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a EDUCATION')
+
+#Deselecciona EDUCATION y selecciona TRAVEL
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[17]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[18]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a TRAVEL')
+
+#Deselecciona TRAVEL y selecciona BUSINESS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[18]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[19]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a BUSINESS')
+
+#Deselecciona BUSINESS y selecciona INK
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[19]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[20]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a INK')
+
+#Deselecciona INK y selecciona FIRE
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[20]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[21]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a FIRE')
+
+#Deselecciona FIRE y selecciona DUST
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[21]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[22]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a DUST')
+
+#Deselecciona DUST y selecciona PAINT
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[22]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[23]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a PAINT')
+
+#Deselecciona PAINT y selecciona SMOKE
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[23]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[24]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a SMOKE')
+
+#Deselecciona SMOKE y selecciona SNOW
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[24]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[25]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a SNOW')
+
+#Deselecciona SNOW y selecciona CLOUDS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[25]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[26]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a CLOUDS')
+
+#Deselecciona CLOUDS y selecciona PAPER
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[26]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[27]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a PAPER')
+
+#Deselecciona PAPER y selecciona LIGHT
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[27]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[28]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a LIGHT')
+
+#Deselecciona LIGHT y selecciona SPARKS
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[28]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[29]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a SPARKS')
+
+#Deselecciona SPARKS y selecciona WATER
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[29]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[30]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a WATER')
+
+#Deselecciona WATER y selecciona OIL
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[30]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[31]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a OIL')
+
+#Deselecciona OIL y selecciona PARTICLES
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[31]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[32]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a PARTICLES')
+
+#Deselecciona PARTICLES y selecciona OVERLAY
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[32]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[33]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a OVERLAY')
+
+#Deselecciona OVERLAY y selecciona BACKGROUND
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[33]/div/label'))) \
+    .click()
+
+WebDriverWait(driver, 5) \
+    .until(EC.element_to_be_clickable((By.XPATH,
+                                       '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[13]/li/ul/li[34]/div/label'))) \
+    .click()
+time.sleep(3)
+
+print('Ha pasado a BACKGROUND')
