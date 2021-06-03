@@ -9,7 +9,8 @@ import time
 import pandas as pd
 import random
 
-
+global p
+p = 1
 
 # Opciones de navegación
 options =  webdriver.ChromeOptions()
@@ -65,10 +66,10 @@ def creartxtapartados():
     print('He creado el TXT Apartados')
 
 def leertxtapartados():
-    global apartados
+    global w
     global lectura_apartados
     lectura_apartados = open("Apartados.txt", 'r')
-    apartados = int(lectura_datos.read())
+    w = int(lectura_datos.read())
 
 def leertxt():
     global seccion_pagina
@@ -138,26 +139,34 @@ def funcionalidad():
         print('He modificado(1) el txt')
 
 def pasarpagina():
-    p = 1
+    global p
+    global w
     leer_pagina()
     while p <= numero_pagina:
-        WebDriverWait(driver, 1) \
+        WebDriverWait(driver, 10) \
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
             .click()
         p = p+1
-        if (p == 40):
+        if (p == 7):
             p = 1
-            creartxtapartados()
-            leertxtapartados()
-            
+            try:
+                leertxtapartados()
+                print('he leido el txt apartados')
+            except:
+                creartxtapartados()
+                print('he creado el txt apartados')
+            w = w+1
+            file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+            file.write(str(w))
+            file.close()
             cambio_apartado()
     print('Siguiente página')
     print('He pasado de pagina')
 
 def cambio_apartado():
     global w
-    if w == 1:
+    if w == 2:
         # Deselecciona Title y selecciona logos
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1289,7 +1298,7 @@ time.sleep(3)
 print('Ha pasado a Titles')
 
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
-While True:
+while True:
     try:
         leertxt()
     except:
@@ -1305,6 +1314,6 @@ While True:
     funcionalidad()
     pasarpagina()
     break
-    #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
+#----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 
 
