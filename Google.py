@@ -16,7 +16,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\teode\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
@@ -26,7 +26,8 @@ driver.get( url )
 r = requests.get(url)
 soup = BeautifulSoup(r.text, "html.parser")
 '''results = soup.find_all("div", {"class": "s-item__info clearfix"})'''
-u = range(1, 30)
+#Numero de scrolls que se desplaza hacia abajo
+rango_scroll = range(1, 30)
 moves = [Keys.DOWN,Keys.UP]
 
 
@@ -38,84 +39,107 @@ def scrapea9objetos(a, b):
     for j in i:
         print('He entrado en:')
         print(j)
-        WebDriverWait(driver, 7) \
+        WebDriverWait(driver, 3) \
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
             .click()
-        time.sleep(6)
         print(j)
         driver.back()
 
-def crartxt():
-    file = open(r"C:/Users/teode/GoogleScrap/Datos.txt", "w")
+def creartxt():
+    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT')
 
+def creartxtpagina():
+    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+    file.write("1")
+    print('He creado el TXT de la pagina')
+
 def leertxt():
-    global x
-    global p
-    p = open("Datos.txt", 'r')
-    x = int(p.read())
+    global seccion_pagina
+    global lectura_datos
+    lectura_datos = open("Datos.txt", 'r')
+    seccion_pagina = int(lectura_datos.read())
+
+def leer_pagina():
+    global lectura_numero_pagina
+    global numero_pagina
+    lectura_numero_pagina = open("Datospagina.txt", 'r')
+    numero_pagina = int(lectura_numero_pagina.read())
 
 def scrollhaciaabajo():
 
-    for y in u:
+    for y in rango_scroll:
         driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
 def funcionalidad():
     leertxt()
     print('Comenzamos con el numero: ')
-    print(x)
-    if (x == 1) :
+    print(seccion_pagina)
+    if (seccion_pagina == 1) :
         scrapea9objetos(1, 10)
         scrollhaciaabajo()
         scrapea9objetos(10, 19)
         scrollhaciaabajo()
-    file = open(r"C:/Users/teode/GoogleScrap/Datos.txt", "w")
-    file.write("2")
-    file.close()
-    print('He modificado(2) el txt')
-    leertxt()
-    if (x == 2):
+        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file.write("2")
+        file.close()
+        print('He modificado(2) el txt')
+    if (seccion_pagina == 2):
         print('Seguimos con el numero:')
-        print(x)
+        print(seccion_pagina)
+        scrollhaciaabajo()
+        scrollhaciaabajo()
         scrapea9objetos(19, 28)
         scrollhaciaabajo()
         scrapea9objetos(28, 37)
         scrollhaciaabajo()
-    file = open(r"C:/Users/teode/GoogleScrap/Datos.txt", "w")
-    file.write("3")
-    file.close()
-    print('He modificado(3) el txt')
-    time.sleep(5)
-    leertxt()
-    if x == 3:
+        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file.write("3")
+        file.close()
+        print('He modificado(3) el txt')
+    if seccion_pagina == 3:
+        global numero_pagina
         print('Seguimos con el numero:')
-        print(x)
+        print(seccion_pagina)
+        scrollhaciaabajo()
+        scrollhaciaabajo()
+        scrollhaciaabajo()
+        scrollhaciaabajo()
         scrapea9objetos(37, 46)
         scrollhaciaabajo()
         scrapea9objetos(46, 55)
         scrollhaciaabajo()
         scrapea9objetos(55, 61)
-    file = open(r"C:/Users/teode/GoogleScrap/Datos.txt", "w")
-    file.write("1")
-    file.close()
-    print('He modificado(1) el txt')
+        numero_pagina = numero_pagina+1
+        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+        file.write(r"numero_pagina")
+        file.close()
+        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file.write("1")
+        file.close()
+        print('He modificado(1) el txt')
 
 def pasarpagina():
-    WebDriverWait(driver, 4) \
-        .until(EC.element_to_be_clickable((By.XPATH,
-                                           '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
-        .click()
-
-
+    p = 1
+    leer_pagina()
+    while p <= numero_pagina:
+        WebDriverWait(driver, 1) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                               '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
+            .click()
+        p = p+1
+    print('Siguiente página')
 
 def pasarpagina2():
-    WebDriverWait(driver, 4) \
+    WebDriverWait(driver, 1) \
         .until(EC.element_to_be_clickable((By.XPATH,
                                            '//*[@id="right-column"]/div[2]/ul/li[10]'))) \
         .click()
+
+
 
 
 #Aceptamos las cookies
@@ -162,34 +186,24 @@ WebDriverWait(driver, 5) \
 time.sleep(3)
 print('Ha pasado a Titles')
 
-#Pagina1
-crartxt()
+#----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
+try:
+    leertxt()
+except:
+    creartxt()
+    print('He creado el primer txt')
+
+try:
+    leer_pagina()
+except:
+    creartxtpagina()
+    print('He creado el segundo txt')
+
 funcionalidad()
 pasarpagina()
-print('Ha pasado a la pagina 2')
-#Pagina2
-funcionalidad()
-pasarpagina()
-print('Ha pasado a la pagina 3')
-#Pagina3
-funcionalidad()
-pasarpagina()
-print('Ha pasado a la pagina 3')
-#Pagina4
-funcionalidad()
-pasarpagina()
-print('Ha pasado a la pagina 4')
-#Pagina5
-funcionalidad()
-pasarpagina()
-print('Ha pasado a la pagina 5')
-#Pagina6
-funcionalidad()
-pasarpagina()
-print('Ha pasado a la pagina 6')
-#Pagina7
-funcionalidad()
-pasarpagina()
+print('He pasado de pagina')
+
+#----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 
 
 #Deselecciona Title y selecciona logos
@@ -205,6 +219,8 @@ WebDriverWait(driver, 5) \
 
 time.sleep(3)
 print('Ha pasado a Logos')
+
+
 
 #Deselecciona Logos y selecciona Photo/Video
 WebDriverWait(driver, 5) \
