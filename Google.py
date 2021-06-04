@@ -9,6 +9,7 @@ import time
 import pandas as pd
 import random
 
+global numero_pagina
 global p
 p = 1
 
@@ -17,13 +18,13 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
 driver = webdriver.Chrome(driver_path, chrome_options=options)
 
-driver.get( url )
+driver.get(url)
 r = requests.get(url)
 soup = BeautifulSoup(r.text, "html.parser")
 '''results = soup.find_all("div", {"class": "s-item__info clearfix"})'''
@@ -48,19 +49,19 @@ def scrapea9objetos(a, b):
         driver.back()
 
 def creartxt():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datos.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT')
 
 def creartxtpagina():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datospagina.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT de la pagina')
 
 def creartxtapartados():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Apartados.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT Apartados')
@@ -97,7 +98,7 @@ def funcionalidad():
         scrollhaciaabajo()
         scrapea9objetos(10, 19)
         scrollhaciaabajo()
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datos.txt", "w")
         file.write("2")
         file.close()
         print('He modificado(2) el txt')
@@ -110,7 +111,7 @@ def funcionalidad():
         scrollhaciaabajo()
         scrapea9objetos(28, 37)
         scrollhaciaabajo()
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datos.txt", "w")
         file.write("3")
         file.close()
         print('He modificado(3) el txt')
@@ -129,20 +130,24 @@ def funcionalidad():
         scrapea9objetos(55, 61)
         leer_pagina()
         numero_pagina = numero_pagina+1
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datospagina.txt", "w")
         file.write(str(numero_pagina))
         file.close()
         print('He escrito el numero de pagina')
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Datos.txt", "w")
         file.write("1")
         file.close()
         print('He modificado(1) el txt')
+        pasarpagina()
+        print('Se ha ejecutado pasar página')
+
 
 def pasarpagina():
     global p
     global w
     leer_pagina()
     while p <= numero_pagina:
+
         WebDriverWait(driver, 10) \
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
@@ -157,7 +162,7 @@ def pasarpagina():
                 creartxtapartados()
                 print('he creado el txt apartados')
             w = w+1
-            file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+            file = open(r"D:\\Forks\\GoogleScrap\\Txts\\Apartados.txt", "w")
             file.write(str(w))
             file.close()
             cambio_apartado()
@@ -1311,6 +1316,7 @@ print('Ha pasado a Titles')
 
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 while True:
+    global numero_pagina
     try:
         leertxt()
     except:
@@ -1322,10 +1328,12 @@ while True:
     except:
         creartxtpagina()
         print('He creado el segundo txt')
-
-    funcionalidad()
-    pasarpagina()
-    break
+    if numero_pagina == 1:
+        funcionalidad()
+    else:
+        pasarpagina()
+        funcionalidad()
+        break
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 
 
