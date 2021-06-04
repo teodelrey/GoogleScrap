@@ -70,7 +70,7 @@ def leertxtapartados():
     global numero_apartado
     global lectura_apartados
     lectura_apartados = open("Apartados.txt", 'r')
-    numero_apartado = int(str(lectura_datos.read()))
+    numero_apartado = int(lectura_apartados.read())
 
 def leertxt():
     global seccion_pagina
@@ -97,9 +97,9 @@ def funcionalidad():
     print(seccion_pagina)
     if (seccion_pagina == 1) :
         scrapea9objetos(1, 10)
-        scrollhaciaabajo(1)
+        scrollhaciaabajo(2)
         scrapea9objetos(10, 19)
-        scrollhaciaabajo(1)
+        scrollhaciaabajo(2)
         file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
         file.write("2")
         file.close()
@@ -152,6 +152,9 @@ def pasarpagina():
         print(numero_pagina)
         p = p+1
         if p == 7:
+            file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+            file.write("1")
+            file.close()
             p = 1
             try:
                 leertxtapartados()
@@ -176,6 +179,8 @@ def pasarpagina():
 def cambio_apartado():
     global numero_apartado
     leertxtapartados()
+    if numero_apartado == 1:
+        funcionalidad()
     if numero_apartado == 2:
         # Deselecciona Title y selecciona logos
         WebDriverWait(driver, 5) \
@@ -190,6 +195,7 @@ def cambio_apartado():
 
         time.sleep(3)
         print('Ha pasado a Logos')
+        funcionalidad()
 
     if numero_apartado == 3:
         # Deselecciona Logos y selecciona Photo/Video
@@ -205,7 +211,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Photos/Videos')
 
-    if w == 4:
+    if numero_apartado == 4:
         # Deselecciona Photo/Video y selecciona Transitions
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -219,7 +225,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Transitions')
 
-    if w == 5:
+    if numero_apartado == 5:
         # Deselecciona Transitions y selecciona Slideshows
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -233,7 +239,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado Slideshows')
 
-    if w == 6:
+    if numero_apartado == 6:
         # Deselecciona Slideshows y selecciona Intros
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -247,7 +253,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Intros')
 
-    if w == 7:
+    if numero_apartado == 7:
         # Deselecciona Intros y selecciona Luts
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -261,7 +267,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Luts')
 
-    if w == 8:
+    if numero_apartado == 8:
         # Deselecciona Luts y selecciona Effects
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -275,7 +281,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Effects')
 
-    if w == 9:
+    if numero_apartado == 9:
         # Deseleccionamos Effects
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -289,7 +295,7 @@ def cambio_apartado():
                                                '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
             .click()
 
-    if w == 10:
+    if numero_apartado == 10:
         # Seleccionamos Davinci Macros
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -305,7 +311,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Titles')
 
-    if w == 11:
+    if numero_apartado == 11:
         # Deselecciona Title y selecciona Transitions
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -319,7 +325,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Transitions')
 
-    if w == 12:
+    if numero_apartado == 12:
         # Deselecciona Transitions y selecciona Logo
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -333,7 +339,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Logo')
 
-    if w == 13:
+    if numero_apartado == 13:
         # Deselecciona Logo y selecciona Backgrounds
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -347,7 +353,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Backgrounds')
 
-    if w == 14:
+    if numero_apartado == 14:
         # Deselecciona Backgrounds y selecciona Overlays
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -361,7 +367,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Overlays')
 
-    if w == 15:
+    if numero_apartado == 15:
         # Deseleccionar Overlays
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -376,7 +382,7 @@ def cambio_apartado():
             .click()
         time.sleep(3)
 
-    if w == 16:
+    if numero_apartado == 16:
         # Apartado photos
         # Seleccionamos STOCK PHOTOS
         WebDriverWait(driver, 5) \
@@ -393,7 +399,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a ABSTRACT & TEXTURES')
 
-    if w == 17:
+    if numero_apartado == 17:
         # Deselecciona ABSTRACT & TEXTURES y selecciona AGRICULTURE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -407,7 +413,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a AGRICULTURE')
 
-    if w == 18:
+    if numero_apartado == 18:
         # Deselecciona AGRICULTURE y selecciona ANIMALS & WILDLIFE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -421,7 +427,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a ANIMALS & WILDLIFE')
 
-    if w == 19:
+    if numero_apartado == 19:
         # Deselecciona ANIMALS & WILDLIFE y selecciona ARCHITECTURE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -435,7 +441,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a ARCHITECTURE')
 
-    if w == 20:
+    if numero_apartado == 20:
         # Deselecciona ARCHITECTURE y selecciona BACKGROUNDS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -449,7 +455,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a BACKGROUNDS')
 
-    if w == 21:
+    if numero_apartado == 21:
         # Deselecciona BACKGROUNDS y selecciona BUSINESS & FINANCE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -463,7 +469,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a BUSINESS & FINANCE')
 
-    if w == 22:
+    if numero_apartado == 22:
         # Deselecciona BUSINESS & FINANCE y selecciona CITY & URBAN
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -477,7 +483,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a CITY & URBAN')
 
-    if w == 23:
+    if numero_apartado == 23:
         # Deselecciona CITY & URBAN y selecciona CREATIVITY & DESIGN
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -491,7 +497,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a CREATIVITY & DESIGN')
 
-    if w == 24:
+    if numero_apartado == 24:
         # Deselecciona CREATIVITY & DESIGN y selecciona CULTURE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -505,7 +511,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a CULTURE')
 
-    if w == 25:
+    if numero_apartado == 25:
         # Deselecciona CULTURE y selecciona EDUCATION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -519,7 +525,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a EDUCATION')
 
-    if w == 26:
+    if numero_apartado == 26:
         # Deselecciona EDUCATION y selecciona FAMILY
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -533,7 +539,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FAMILY')
 
-    if w == 27:
+    if numero_apartado == 27:
         # Deselecciona FAMILY y selecciona FASHION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -547,7 +553,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FASHION')
 
-    if w == 28:
+    if numero_apartado == 28:
         # Deselecciona FASHION y selecciona FOOD & DRINK
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -561,7 +567,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FOOD & DRINK')
 
-    if w == 29:
+    if numero_apartado == 29:
         # Deselecciona FOOD & DRINK y selecciona HEALTH & FITNESS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -575,7 +581,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HEALTH & FITNESS')
 
-    if w == 30:
+    if numero_apartado == 30:
         # Deselecciona HEALTH & FITNESS y selecciona HEALTHCARE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -589,7 +595,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HEALTHCARE')
 
-    if w == 31:
+    if numero_apartado == 31:
         # Deselecciona HEALTHCARE y selecciona HOLIDAYS & SEASONAL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -603,7 +609,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HOLIDAYS & SEASONAL')
 
-    if w == 32:
+    if numero_apartado == 32:
         # Deselecciona HOLIDAYS & SEASONAL y selecciona HOME
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -617,7 +623,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HOME')
 
-    if w == 33:
+    if numero_apartado == 33:
         # Deselecciona HOME y selecciona INDUSTRIAL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -631,7 +637,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a INDUSTRIAL')
 
-    if w == 34:
+    if numero_apartado == 34:
         # Deselecciona INDUSTRIAL y selecciona LIFESTYLE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -645,7 +651,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a LIFESTYLE')
 
-    if w == 35:
+    if numero_apartado == 35:
         # Deselecciona LIFESTYLE y selecciona MUSIC
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -659,7 +665,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a MUSIC')
 
-    if w == 36:
+    if numero_apartado == 36:
         # Deselecciona MUSIC y selecciona NATURE & OUTDOORS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -673,7 +679,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a NATURE & OUTDOORS')
 
-    if w == 37:
+    if numero_apartado == 37:
         # Deselecciona NATURE & OUTDOORS y selecciona PEOPLE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -687,7 +693,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a PEOPLE')
 
-    if w == 38:
+    if numero_apartado == 38:
         # Deselecciona PEOPLE y selecciona SCIENCE & TECHNOLOGY
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -701,7 +707,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SCIENCE & TECHNOLOGY')
 
-    if w == 39:
+    if numero_apartado == 39:
         # Deselecciona SCIENCE & TECHNOLOGY y selecciona SPORTS & RECREATION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -715,7 +721,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SPORTS & RECREATION')
 
-    if w == 40:
+    if numero_apartado == 40:
         # Deselecciona SPORTS & RECREATION y selecciona TRANSPORTATION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -729,7 +735,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a TRANSPORTATION')
 
-    if w == 41:
+    if numero_apartado == 41:
         # Deselecciona TRANSPORTATION y selecciona TRAVEL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -743,7 +749,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a TRAVEL')
 
-    if w == 42:
+    if numero_apartado == 42:
         # Deselecciona TRAVEL y selecciona VINTAGE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -757,7 +763,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a VINTAGE')
 
-    if w == 43:
+    if numero_apartado == 43:
         # Deselecciona VINTAGE y selecciona WEDDING
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -771,7 +777,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a WEDDING')
 
-    if w == 44:
+    if numero_apartado == 44:
         # Deselecciona WEDDING
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -786,7 +792,7 @@ def cambio_apartado():
             .click()
         print('Deseleccionamos photos')
 
-    if w == 45:
+    if numero_apartado == 45:
         # Apartado videos
         # Seleccionamos Video
         WebDriverWait(driver, 5) \
@@ -804,7 +810,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Seleccionamos GREEN SCREEN')
 
-    if w == 46:
+    if numero_apartado == 46:
         # Deselecciona GREEN SCREEN y selecciona TRANSPORTATION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -818,7 +824,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a TRANSPORTATION')
 
-    if w == 47:
+    if numero_apartado == 47:
         # Deselecciona TRANSPORTATION y selecciona BUILDINGS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -832,7 +838,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a BUILDINGS')
 
-    if w == 48:
+    if numero_apartado == 48:
         # Deselecciona BUILDINGS y selecciona TECHNOLOGY
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -846,7 +852,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a TECHNOLOGY')
 
-    if w == 49:
+    if numero_apartado == 49:
         # Deselecciona TECHNOLOGY y selecciona PEOPLE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -860,7 +866,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a PEOPLE')
 
-    if w == 50:
+    if numero_apartado == 50:
         # Deselecciona PEOPLE y selecciona HEALTH
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -874,7 +880,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HEALTH')
 
-    if w == 51:
+    if numero_apartado == 51:
         # Deselecciona HEALTH y selecciona FASHION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -888,7 +894,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FASHION')
 
-    if w == 52:
+    if numero_apartado == 52:
         # Deselecciona FASHION y selecciona ANIMALS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -902,7 +908,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a ANIMALS')
 
-    if w == 53:
+    if numero_apartado == 53:
         # Deselecciona ANIMALS y selecciona FOOD
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -916,7 +922,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FOOD')
 
-    if w == 54:
+    if numero_apartado == 54:
         # Deselecciona FOOD y selecciona SPORTS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -930,7 +936,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SPORTS')
 
-    if w == 55:
+    if numero_apartado == 55:
         # Deselecciona SPORTS y selecciona NATURE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -944,7 +950,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a NATURE')
 
-    if w == 56:
+    if numero_apartado == 56:
         # Deselecciona NATURE y selecciona AERIAL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -958,7 +964,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a AERIAL')
 
-    if w == 57:
+    if numero_apartado == 57:
         # Deselecciona AERIAL y selecciona HOLIDAYS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -972,7 +978,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HOLIDAYS')
 
-    if w == 58:
+    if numero_apartado == 58:
         # Deselecciona HOLIDAYS y selecciona INDUSTRIAL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -986,7 +992,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a INDUSTRIAL')
 
-    if w == 59:
+    if numero_apartado == 59:
         # Deselecciona INDUSTRIAL y selecciona HOUSEHOLD
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1000,7 +1006,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a HOUSEHOLD')
 
-    if w == 60:
+    if numero_apartado == 60:
         # Deselecciona HOUSEHOLD y selecciona SCIENCE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1014,7 +1020,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SCIENCE')
 
-    if w == 61:
+    if numero_apartado == 61:
         # Deselecciona SCIENCE y selecciona EDUCATION
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1028,7 +1034,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a EDUCATION')
 
-    if w == 62:
+    if numero_apartado == 62:
         # Deselecciona EDUCATION y selecciona TRAVEL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1042,7 +1048,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a TRAVEL')
 
-    if w == 63:
+    if numero_apartado == 63:
         # Deselecciona TRAVEL y selecciona BUSINESS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1056,7 +1062,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a BUSINESS')
 
-    if w == 64:
+    if numero_apartado == 64:
         # Deselecciona BUSINESS y selecciona INK
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1070,7 +1076,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a INK')
 
-    if w == 65:
+    if numero_apartado == 65:
         # Deselecciona INK y selecciona FIRE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1084,7 +1090,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a FIRE')
 
-    if w == 66:
+    if numero_apartado == 66:
         # Deselecciona FIRE y selecciona DUST
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1098,7 +1104,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a DUST')
 
-    if w == 67:
+    if numero_apartado == 67:
         # Deselecciona DUST y selecciona PAINT
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1112,7 +1118,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a PAINT')
 
-    if w == 68:
+    if numero_apartado == 68:
         # Deselecciona PAINT y selecciona SMOKE
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1126,7 +1132,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SMOKE')
 
-    if w == 69:
+    if numero_apartado == 69:
         # Deselecciona SMOKE y selecciona SNOW
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1140,7 +1146,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SNOW')
 
-    if w == 70:
+    if numero_apartado == 70:
         # Deselecciona SNOW y selecciona CLOUDS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1154,7 +1160,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a CLOUDS')
 
-    if w == 71:
+    if numero_apartado == 71:
         # Deselecciona CLOUDS y selecciona PAPER
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1168,7 +1174,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a PAPER')
 
-    if w == 72:
+    if numero_apartado == 72:
         # Deselecciona PAPER y selecciona LIGHT
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1182,7 +1188,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a LIGHT')
 
-    if w == 73:
+    if numero_apartado == 73:
         # Deselecciona LIGHT y selecciona SPARKS
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1196,7 +1202,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a SPARKS')
 
-    if w == 74:
+    if numero_apartado == 74:
         # Deselecciona SPARKS y selecciona WATER
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1210,7 +1216,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a WATER')
 
-    if w == 75:
+    if numero_apartado == 75:
         # Deselecciona WATER y selecciona OIL
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1224,7 +1230,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a OIL')
 
-    if w == 76:
+    if numero_apartado == 76:
         # Deselecciona OIL y selecciona PARTICLES
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1238,7 +1244,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a PARTICLES')
 
-    if w == 77:
+    if numero_apartado == 77:
         # Deselecciona PARTICLES y selecciona OVERLAY
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1252,7 +1258,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a OVERLAY')
 
-    if w == 78:
+    if numero_apartado == 78:
         # Deselecciona OVERLAY y selecciona BACKGROUND
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1265,6 +1271,7 @@ def cambio_apartado():
             .click()
         time.sleep(3)
         print('Ha pasado a BACKGROUND')
+
 
 def pasarpagina2():
     WebDriverWait(driver, 1) \
@@ -1336,10 +1343,13 @@ while True:
     except:
         creartxtpagina()
         print('He creado el segundo txt')
-    cambio_apartado()
+
     if numero_pagina == 1:
-        funcionalidad()
+        cambio_apartado()
+        print('he entrado en el if == ')
+        '''funcionalidad()'''
     else:
+        print('he entrado en el else del if == 1')
         pasarpagina()
         time.sleep(5)
         funcionalidad()
