@@ -12,6 +12,7 @@ import random
 global p
 p = 1
 
+
 # Opciones de navegación
 options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
@@ -28,7 +29,7 @@ r = requests.get(url)
 soup = BeautifulSoup(r.text, "html.parser")
 '''results = soup.find_all("div", {"class": "s-item__info clearfix"})'''
 #Numero de scrolls que se desplaza hacia abajo
-rango_scroll = range(1, 30)
+rango_scroll = range(1, 60)
 moves = [Keys.DOWN,Keys.UP]
 
 
@@ -66,10 +67,10 @@ def creartxtapartados():
     print('He creado el TXT Apartados')
 
 def leertxtapartados():
-    global w
+    global numero_apartado
     global lectura_apartados
     lectura_apartados = open("Apartados.txt", 'r')
-    w = int(lectura_datos.read())
+    numero_apartado = int(str(lectura_datos.read()))
 
 def leertxt():
     global seccion_pagina
@@ -83,10 +84,12 @@ def leer_pagina():
     lectura_pagina = open("Datospagina.txt", 'r')
     numero_pagina = int(lectura_pagina.read())
 
-def scrollhaciaabajo():
-
-    for y in rango_scroll:
-        driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
+def scrollhaciaabajo(numero_scrolls):
+    v = 1
+    while v <= numero_scrolls:
+        v = v+1
+        for y in rango_scroll:
+            driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
 def funcionalidad():
     leertxt()
@@ -94,9 +97,9 @@ def funcionalidad():
     print(seccion_pagina)
     if (seccion_pagina == 1) :
         scrapea9objetos(1, 10)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         scrapea9objetos(10, 19)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
         file.write("2")
         file.close()
@@ -104,12 +107,11 @@ def funcionalidad():
     if (seccion_pagina == 2):
         print('Seguimos con el numero:')
         print(seccion_pagina)
-        scrollhaciaabajo()
-        scrollhaciaabajo()
+        scrollhaciaabajo(2)
         scrapea9objetos(19, 28)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         scrapea9objetos(28, 37)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
         file.write("3")
         file.close()
@@ -118,14 +120,11 @@ def funcionalidad():
         global numero_pagina
         print('Seguimos con el numero:')
         print(seccion_pagina)
-        scrollhaciaabajo()
-        scrollhaciaabajo()
-        scrollhaciaabajo()
-        scrollhaciaabajo()
+        scrollhaciaabajo(3)
         scrapea9objetos(37, 46)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         scrapea9objetos(46, 55)
-        scrollhaciaabajo()
+        scrollhaciaabajo(1)
         scrapea9objetos(55, 61)
         leer_pagina()
         numero_pagina = numero_pagina+1
@@ -137,18 +136,22 @@ def funcionalidad():
         file.write("1")
         file.close()
         print('He modificado(1) el txt')
+        pasarpagina()
 
 def pasarpagina():
     global p
-    global w
+    global numero_apartado
     leer_pagina()
-    while p <= numero_pagina:
+    while p < numero_pagina:
         WebDriverWait(driver, 10) \
             .until(EC.element_to_be_clickable((By.XPATH,
                                                '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
             .click()
+        print('Impriendo P y Numero de pag')
+        print(p)
+        print(numero_pagina)
         p = p+1
-        if (p == 7):
+        if p == 7:
             p = 1
             try:
                 leertxtapartados()
@@ -156,17 +159,24 @@ def pasarpagina():
             except:
                 creartxtapartados()
                 print('he creado el txt apartados')
-            w = w+1
+            numero_apartado = numero_apartado+1
             file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
-            file.write(str(w))
+            file.write(str(numero_apartado))
             file.close()
+            print('Llamo a cambio de apartados')
             cambio_apartado()
+    if numero_pagina == 1:
+        WebDriverWait(driver, 10) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                               '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
+            .click()
     print('Siguiente página')
     print('He pasado de pagina')
 
 def cambio_apartado():
-    global w
-    if w == 2:
+    global numero_apartado
+    leertxtapartados()
+    if numero_apartado == 2:
         # Deselecciona Title y selecciona logos
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -181,7 +191,7 @@ def cambio_apartado():
         time.sleep(3)
         print('Ha pasado a Logos')
 
-    if w == 3:
+    if numero_apartado == 3:
         # Deselecciona Logos y selecciona Photo/Video
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
@@ -1309,8 +1319,12 @@ WebDriverWait(driver, 5) \
 time.sleep(3)
 print('Ha pasado a Titles')
 
+
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
+creartxtapartados()
 while True:
+    leer_pagina()
+    global numero_pagina
     try:
         leertxt()
     except:
@@ -1322,9 +1336,13 @@ while True:
     except:
         creartxtpagina()
         print('He creado el segundo txt')
-
-    funcionalidad()
-    pasarpagina()
+    cambio_apartado()
+    if numero_pagina == 1:
+        funcionalidad()
+    else:
+        pasarpagina()
+        time.sleep(5)
+        funcionalidad()
     break
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 
