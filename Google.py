@@ -38,16 +38,20 @@ moves = [Keys.DOWN,Keys.UP]
 
 def scrapea9objetos(a, b):
 
-    i = range(a, b)
-    for j in i:
-        print('He entrado en:')
-        print(j)
-        WebDriverWait(driver, 3) \
-            .until(EC.element_to_be_clickable((By.XPATH,
-                                               '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
-            .click()
-        print(j)
-        driver.back()
+    while True:
+        i = range(a, b)
+        try:
+            for j in i:
+                print('He entrado en:')
+                print(j)
+                WebDriverWait(driver, 3) \
+                    .until(EC.element_to_be_clickable((By.XPATH,
+                                                       '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
+                    .click()
+                print(j)
+                driver.back()
+        except:
+            pasarpagina()
 
 def creartxt():
     #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
@@ -149,6 +153,8 @@ def funcionalidad():
 def pasarpagina():
     global p
     global numero_apartado
+    ultima_pagina = driver.find_element_by_class_name('page-item is-last')
+    print(ultima_pagina)
     leer_pagina()
     while p < numero_pagina:
         WebDriverWait(driver, 10) \
@@ -159,7 +165,7 @@ def pasarpagina():
         print(p)
         print(numero_pagina)
         p = p+1
-        if p == 7:
+        if p == ultima_pagina:
             file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
             file.write("1")
             file.close()
