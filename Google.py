@@ -18,7 +18,8 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+#driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
+driver_path = 'D:\\Forks\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
 
 url = "https://motionarray.com/account/login"
 
@@ -35,39 +36,36 @@ moves = [Keys.DOWN,Keys.UP]
 
                                             #Declaración de variables
 
-def encontrar_ultima_pagina
-
 def scrapea9objetos(a, b):
 
-    while True:
-        i = range(a, b)
-        try:
-            for j in i:
-                print('He entrado en:')
-                print(j)
-                WebDriverWait(driver, 3) \
-                    .until(EC.element_to_be_clickable((By.XPATH,
-                                                       '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
-                    .click()
-                print(j)
-                driver.back()
-        except:
-            pasarpagina()
+    i = range(a, b)
+    for j in i:
+        print('He entrado en:')
+        print(j)
+        WebDriverWait(driver, 3) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                               '//*[@id="right-column"]/div[1]/div['+str(j)+']/div[2]/h2/a'))) \
+            .click()
+        print(j)
+        driver.back()
 
 def creartxt():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+    #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Datos.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT')
 
 def creartxtpagina():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+    #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Datospagina.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT de la pagina')
 
 def creartxtapartados():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+    #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+    file = open(r"D:\\Forks\\GoogleScrap\\Apartados.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT Apartados')
@@ -106,7 +104,8 @@ def funcionalidad():
         scrollhaciaabajo(2)
         scrapea9objetos(10, 19)
         scrollhaciaabajo(2)
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Datos.txt", "w")
         file.write("2")
         file.close()
         print('He modificado(2) el txt')
@@ -118,7 +117,8 @@ def funcionalidad():
         scrollhaciaabajo(1)
         scrapea9objetos(28, 37)
         scrollhaciaabajo(1)
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Datos.txt", "w")
         file.write("3")
         file.close()
         print('He modificado(3) el txt')
@@ -134,11 +134,13 @@ def funcionalidad():
         scrapea9objetos(55, 61)
         leer_pagina()
         numero_pagina = numero_pagina+1
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+        #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Datospagina.txt", "w")
         file.write(str(numero_pagina))
         file.close()
         print('He escrito el numero de pagina')
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+        file = open(r"D:\\Forks\\GoogleScrap\\Datos.txt", "w")
         file.write("1")
         file.close()
         print('He modificado(1) el txt')
@@ -147,8 +149,6 @@ def funcionalidad():
 def pasarpagina():
     global p
     global numero_apartado
-    ultima_pagina = driver.find_element_by_class_name('page-item is-last')
-    print(ultima_pagina)
     leer_pagina()
     while p < numero_pagina:
         WebDriverWait(driver, 10) \
@@ -159,7 +159,7 @@ def pasarpagina():
         print(p)
         print(numero_pagina)
         p = p+1
-        if p == ultima_pagina:
+        if p == 7:
             file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
             file.write("1")
             file.close()
@@ -171,7 +171,8 @@ def pasarpagina():
                 creartxtapartados()
                 print('he creado el txt apartados')
             numero_apartado = numero_apartado+1
-            file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+            #file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+            file = open(r"D:\\Forks\\GoogleScrap\\Apartados.txt", "w")
             file.write(str(numero_apartado))
             file.close()
             print('Llamo a cambio de apartados')
