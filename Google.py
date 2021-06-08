@@ -35,6 +35,8 @@ moves = [Keys.DOWN,Keys.UP]
 
                                             #Declaración de variables
 
+def encontrar_ultima_pagina
+
 def scrapea9objetos(a, b):
 
     i = range(a, b)
