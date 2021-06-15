@@ -51,25 +51,141 @@ def scrapea9objetos(a, b):
             driver.back()
             driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
             driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
-            driver.find_element_by_css_selector('body').send_keys(Keys.DOWN)
 
     except:
         print('se ha roto')
 
+def encuentra_ultima_pagina():
+    global k
+    k = 1
+    global p
+    global w
+    w = 1
+    global variable2
+    while True:
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[2]'))) \
+                .click()
+            k = k+1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[3]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[4]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[5]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[6]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[7]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[8]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[10]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+
 def creartxt():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datos.txt", "w")
+    file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\Datos.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT')
 
 def creartxtpagina():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Datospagina.txt", "w")
+    file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\Datospagina.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT de la pagina')
 
 def creartxtapartados():
-    file = open(r"C:\\Users\\Teo\\GoogleScrap\\Apartados.txt", "w")
+    file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\Apartados.txt", "w")
     file.write("1")
     file.close()
     print('He creado el TXT Apartados')
@@ -1340,9 +1456,9 @@ print('Ha pasado a Titles')
 #----------------------------------------------------------Ejecucion de funciones---------------------------------------------------------------------------
 creartxtapartados()
 leertxtapartados()
+cambio_ul
 cambio_apartado()
 while True:
-    global numero_pagina
     try:
         leertxt()
     except:
@@ -1351,6 +1467,7 @@ while True:
 
     try:
         leer_pagina()
+        print('he leido leer pagina')
     except:
         creartxtpagina()
         print('He creado el segundo txt')

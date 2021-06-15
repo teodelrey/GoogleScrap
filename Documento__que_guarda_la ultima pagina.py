@@ -39,38 +39,114 @@ def encuentra_ultima_pagina():
     w = 1
     global variable2
     while True:
-        while True:
-            try:
-                while k <= 10:
-                    WebDriverWait(driver, 10) \
-                        .until(EC.element_to_be_clickable((By.XPATH,
-                                                           '//*[@id="right-column"]/div[2]/ul/li['+k+']'))) \
-                        .click()
-                    print('funciona')
-                    w = k
-                    break
-            except:
-                k = k + 1
-                print(k)
-        if w != 1:
+        try:
             WebDriverWait(driver, 10) \
                 .until(EC.element_to_be_clickable((By.XPATH,
-                                                   '//*[@id="right-column"]/div[2]/ul/li['+w+']'))) \
+                                                   '//*[@id="right-column"]/div[2]/ul/li[2]'))) \
                 .click()
-            print('Impriendo P antes de sumar 1')
-            print(p)
-            p = p+1
-            print('Imprimiendo P despues de la suma')
-            print(p)
-            try:
-                variable2 = driver.find_element_by_css_selector("li.page-item.is-next.disabled")
-                print(variable2)
-                break
-            except:
-                print('No lo ha encontrado')
-        file = open(r"C:\\Users\\Teo\\GoogleScrap\\ultima_pagina.txt", "w")
-        file.write(str(p))
-        file.close()
+            k = k+1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[3]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[4]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[5]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[6]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[7]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[8]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[9]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
+        try:
+            WebDriverWait(driver, 10) \
+                .until(EC.element_to_be_clickable((By.XPATH,
+                                                   '//*[@id="right-column"]/div[2]/ul/li[10]'))) \
+                .click()
+            k = k + 1
+        except:
+            w = k - 2
+            file = open(r"C:\\Users\\Teo\\Desktop\\Principal\\ultima_pagina.txt", "w")
+            file.write(str(w))
+            file.close()
+            break
 
 def cambio_apartado():
     global numero_apartado
@@ -95,12 +171,18 @@ def cambio_apartado():
         # Deselecciona Logos y selecciona Photo/Video
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
-                                               '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[2]/div/label'))) \
+                                               '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[1]/div/label/span[2]'))) \
             .click()
 
         WebDriverWait(driver, 5) \
             .until(EC.element_to_be_clickable((By.XPATH,
-                                               '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/ul/li[3]/div/label'))) \
+                                               '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/div[1]/div/label'))) \
+            .click()
+        time.sleep(3)
+
+        WebDriverWait(driver, 5) \
+            .until(EC.element_to_be_clickable((By.XPATH,
+                                               '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[10]/li/ul/li[2]/div/label'))) \
             .click()
         time.sleep(3)
         print('Ha pasado a Photos/Videos')
@@ -1212,7 +1294,6 @@ WebDriverWait(driver, 1) \
     .until(EC.element_to_be_clickable((By.XPATH,
                                        '/html/body/div[1]/div[2]/div[2]/div[1]/section/div/div[1]/div[2]/div/ul[8]/li/div[1]/div/label'))) \
     .click()
-
 
 #Seleccionamos Titles
 WebDriverWait(driver, 5) \
