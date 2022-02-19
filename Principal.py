@@ -1,13 +1,12 @@
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time
-import pandas as pd
-import random
 
 global p
 p = 1
@@ -18,12 +17,9 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\Teo\\GoogleScrap\\chromedriver_win32\\chromedriver.exe'
-
+s = Service('/home/mariola/Documentos/GitHub/GoogleScrap/chromedriver_win32/chromedriver.exe')
 url = "https://motionarray.com/account/login"
-
-driver = webdriver.Chrome(driver_path, chrome_options=options)
-
+driver = webdriver.Chrome(service=s)
 driver.get( url )
 r = requests.get(url)
 soup = BeautifulSoup(r.text, "html.parser")
